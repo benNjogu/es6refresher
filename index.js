@@ -1,11 +1,11 @@
 const person = {
   name: "Ben",
-  walk() {},
-  talk() {
-    console.log("talking");
+  walk() {
+    console.log(this);
   },
 };
 
-person.talk();
-person["name"] = "kimangas";
-console.log(person.name);
+person.walk();
+
+const walk = person.walk;
+walk();
