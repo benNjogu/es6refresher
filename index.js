@@ -1,9 +1,9 @@
 function sayHello() {
-  for (var i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     console.log(i);
   }
 
-  //i is still accessible outside the for loop! shouldn't be.
+  //with let, it is no longer accessible
   console.log(i);
 }
 
