@@ -4,6 +4,6 @@ const address = {
   country: "Kenya",
 };
 
-const { street, city, country } = address;
+const { city: mtaa } = address;
 
-console.log(street);
+console.log(mtaa);
