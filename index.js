@@ -1,8 +1,10 @@
-const jobs = [
-  { id: 1, isActive: true },
-  { id: 2, isActive: true },
-  { id: 3, isActive: false },
-];
+const person = {
+  talk() {
+    var self = this;
+    setTimeout(function () {
+      console.log("this", self);
+    }, 1000);
+  },
+};
 
-const activeJobs = jobs.filter((jobs) => jobs.isActive);
-console.log(activeJobs);
+person.talk();
