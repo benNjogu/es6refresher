@@ -1,9 +1,1 @@
-function factorial(n) {
-  if (n == 0) {
-    return 1;
-  }
-
-  return factorial(n - 1) * n;
-}
-
-console.log(factorial(8));
+console.log(`half of a 100 is ${100 / 2}`);
