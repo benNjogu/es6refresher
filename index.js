@@ -1,7 +1,8 @@
-const square = function (number) {
-  return number * number;
-};
+const jobs = [
+  { id: 1, isActive: true },
+  { id: 2, isActive: true },
+  { id: 3, isActive: false },
+];
 
-const square1 = (number) => number * number;
-
-console.log(square1(5));
+const activeJobs = jobs.filter((jobs) => jobs.isActive);
+console.log(activeJobs);
