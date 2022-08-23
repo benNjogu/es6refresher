@@ -1,9 +1,8 @@
-const address = {
-  street: "Mackenzie",
-  city: "Kanairo",
-  country: "Kenya",
-};
+let total = 0;
+let count = 1;
+while (count <= 10) {
+  total += count;
+  count++;
+}
 
-const { city: mtaa } = address;
-
-console.log(mtaa);
+console.log(total);
