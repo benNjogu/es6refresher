@@ -1,2 +1,6 @@
-caught = 5 * 5;
-console.log(caught);
+let char = "#";
+
+for (let i = 1; i <= 7; i++) {
+  console.log(char);
+  char += "#";
+}
