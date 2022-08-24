@@ -1,15 +1,19 @@
-const humus = function (factor) {
-  const ingredient = function (amount, unit, name) {
-    let ingredientAmount = amount * factor;
-    if (ingredientAmount > 1) {
-      unit += "s";
-    }
-    console.log(`${ingredientAmount} ${unit} ${name}`);
-  };
-
-  ingredient(1, "can", "chickpeas");
-  ingredient(0.25, "cup", "tahini");
-  ingredient(2, "tablespoon", "olive oil");
+let missileSystem = {
+  safeMode: true,
+  lauch(time) {
+    console.log("lauching " + time);
+  },
 };
 
-humus(2);
+let lauchMissiles = function () {
+  missileSystem.lauch("now");
+};
+
+safeMode = missileSystem.safeMode;
+if (safeMode) {
+  lauchMissiles = function () {
+    console.log("can't lauch, safe mode enabled");
+  };
+}
+
+lauchMissiles();
