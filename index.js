@@ -1,6 +1,9 @@
-function greet(who) {
-  console.log("Hello " + who);
+function chicken() {
+  return egg();
 }
 
-greet("Harry");
-console.log("Bye");
+function egg() {
+  return chicken();
+}
+
+console.log(chicken() + "came first.");
