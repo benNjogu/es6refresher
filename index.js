@@ -1,7 +1,15 @@
-const halve = function (n) {
-  return n / 2;
+const humus = function (factor) {
+  const ingredient = function (amount, unit, name) {
+    let ingredientAmount = amount * factor;
+    if (ingredientAmount > 1) {
+      unit += "s";
+    }
+    console.log(`${ingredientAmount} ${unit} ${name}`);
+  };
+
+  ingredient(1, "can", "chickpeas");
+  ingredient(0.25, "cup", "tahini");
+  ingredient(2, "tablespoon", "olive oil");
 };
 
-let n = 10;
-console.log(halve(100));
-console.log(n);
+humus(2);
