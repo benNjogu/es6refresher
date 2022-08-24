@@ -1,8 +1,7 @@
-function square(side) {
-  return side * side;
+function minus(a, b) {
+  if (b == undefined) return -a;
+  else return a - b;
 }
-console.log(square(6, "hedgehoge", true));
-/**
- * In the above case, the language does not complain.
- * It ignores the other arguments and calls the function using the first one
- */
+
+console.log(minus(10));
+console.log(minus(10, 5));
