@@ -1,10 +1,3 @@
-function isEven(num) {
-  if (num < 0) return;
-  if (num === 0) return true;
-  else if (num === 1) return false;
-
-  return isEven(num - 2);
-}
-
-console.log(isEven(50)); //-> true
-console.log(isEven(75)); //-> false
+let name = "kamande";
+console.log(name[5]);
+//get letter at index 5
