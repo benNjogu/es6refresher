@@ -1,6 +1,10 @@
-function min(num1, num2) {
-  if (num1 < num2) return num1;
-  return num2;
+function isEven(num) {
+  if (num < 0) return;
+  if (num === 0) return true;
+  else if (num === 1) return false;
+
+  return isEven(num - 2);
 }
 
-console.log(min(14, 6));
+console.log(isEven(50)); //-> true
+console.log(isEven(75)); //-> false
