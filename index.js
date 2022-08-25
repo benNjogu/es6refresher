@@ -19,3 +19,10 @@ let journal = [
     squirrel: true,
   },
 ];
+
+function addEntry(events, squirrel) {
+  journal.push({ events, squirrel });
+}
+
+addEntry(["hope", "this", "will", "work"], false);
+console.log(journal[3]);
