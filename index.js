@@ -1,8 +1,21 @@
-let anObject = {
-  x: 1,
-  y: 2,
-  z: "naah!",
-};
-
-Object.assign(anObject, {z: 3, a: 'naah'})
-console.log(anObject);//-> { x: 1, y: 2, z: 3, a: "naah" }
+let journal = [
+  {
+    events: ["work", "touched tree", "pizza", "running", "television"],
+    squirrel: false,
+  },
+  {
+    events: [
+      "work",
+      "ice cream",
+      "cauliflower",
+      "lasagna",
+      "touched tree",
+      "brushed teeth",
+    ],
+    squirrel: false,
+  },
+  {
+    events: ["weekend", "cycling", "break", "peanuts", "beer"],
+    squirrel: true,
+  },
+];
