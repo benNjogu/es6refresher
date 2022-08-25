@@ -1,10 +1,15 @@
-let descriptions = {
-  work: "went to work",
-  "touched tree": "Touched a tree",
+let anObject = {
+  left: 1,
+  right: 2,
 };
 
-console.log(descriptions["touched tree"]);
+console.log(anObject.left); // 1
+delete anObject.left; //deletes the specified object
+console.log(anObject.left); //undefined
+console.log("left" in anObject); //false
+console.log("right" in anObject); //true
+
 /**
- * The above shows how we write properties whose names aren't valid binding names or numbers.
- * Also, how to access them
+ * The binary in operator when applied to a string and an object, tells you
+ * whether that object has a property with that name.
  */
