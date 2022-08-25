@@ -1,7 +1,10 @@
-let day1 = {
-  squirrel: false,
-  events: ["work", "touched tree", "pizza", "running"],
+let descriptions = {
+  work: "went to work",
+  "touched tree": "Touched a tree",
 };
 
-console.log(day1.squirrel); //false
-console.log(day1.events[2]); //pizza
+console.log(descriptions["touched tree"]);
+/**
+ * The above shows how we write properties whose names aren't valid binding names or numbers.
+ * Also, how to access them
+ */
