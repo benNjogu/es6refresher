@@ -1,23 +1,16 @@
-function printZeroPaddedWithLabel(number, label) {
-  let numberString = String(number);
-  while (numberString.length < 3) {
-    numberString = "0" + numberString;
+function zeroPad(number, width) {
+  let string = String(number);
+  while (string.length < width) {
+    string = "0" + string;
   }
-
-  console.log(`${numberString} ${label}`);
-}
-/**
- * The above function, as the name suggests, does 3 things:
- * print
- * adding a zero 
- * adding a label.
- * ONE FUNCTION!!!
- */
-
-function printFarmInventory(cows, chicken, pigs) {
-  printZeroPaddedWithLabel(cows, "Cows");
-  printZeroPaddedWithLabel(chicken, "Chicken");
-  printZeroPaddedWithLabel(pigs, "Pigs");
+  return string;
 }
 
-printFarmInventory(7, 11, 3);
+function printFarmInventory(cows, chicken, pigs, goats) {
+  console.log(`${zeroPad(chicken, 3)}`);
+  console.log(`${zeroPad(pigs, 3)}`);
+  console.log(`${zeroPad(cows, 3)}`);
+  console.log(zeroPad(goats, 3));
+}
+
+printFarmInventory(9, 13, 5, 2);
