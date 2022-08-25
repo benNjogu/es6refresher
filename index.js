@@ -9,4 +9,4 @@ function countChar(string, char) {
   return count;
 }
 let letter = "B";
-console.log(`There are ${countChar("BARNABAS", letter)} ${letter}s`);
+console.log(`There are ${countChar("BARNABAS", letter)} ${letter}s`);//->There are 2 Bs
