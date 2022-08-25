@@ -6,6 +6,13 @@ function printZeroPaddedWithLabel(number, label) {
 
   console.log(`${numberString} ${label}`);
 }
+/**
+ * The above function, as the name suggests, does 3 things:
+ * print
+ * adding a zero 
+ * adding a label.
+ * ONE FUNCTION!!!
+ */
 
 function printFarmInventory(cows, chicken, pigs) {
   printZeroPaddedWithLabel(cows, "Cows");
