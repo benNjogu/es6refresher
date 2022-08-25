@@ -4,4 +4,5 @@ let anObject = {
   z: "naah!",
 };
 
-console.log(Object.keys(anObject));//->[ "x", "y", "z" ]
+Object.assign(anObject, {z: 3, a: 'naah'})
+console.log(anObject);//-> { x: 1, y: 2, z: 3, a: "naah" }
