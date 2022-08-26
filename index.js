@@ -1,5 +1,4 @@
-console.log("        okay \n".trim());
+console.log(String(6).padStart(3, "0"));
 /**
- * The trim method removes whitespace(spaces, newlines, tabs, and similar characters)
- * from the start and the end of a string.
+ * padStart takes the desired width and padding characters as the arguments
  */
