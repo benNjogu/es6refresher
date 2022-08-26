@@ -1,4 +1,4 @@
-console.log(Math.floor(Math.random() * 10));
+console.log(Math.abs(-56)); //-> 56
 /**
- * The above will produce with equal chance, any number, between 0 and 9
+ * The above will negate the negative value, but would leave a positive one as is.
  */
