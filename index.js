@@ -9,4 +9,9 @@
  *                                           - no bindings
  *                                           - or anything that contains actual computations
  * -Comments are not allowed in JSON.
+ * Example:
+ * {
+ *  "squirrel" : false,
+ *  "events" : ["work", "touched tree", "pizza", "running"]
+ * }
  */
