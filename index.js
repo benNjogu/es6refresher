@@ -1,1 +1,1 @@
-console.log(Math.round(Math.random())); //rounds off to the nearest number 0 or 1
+console.log(Math.floor(Math.random())); //rounds off to the nearest  whole number upwards i.e 1
