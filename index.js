@@ -15,3 +15,7 @@
  *  "events" : ["work", "touched tree", "pizza", "running"]
  * }
  */
+
+let string = JSON.stringify({ squirrel: false, events: ["weekend"] });//takes javascript value and returns a JSON-Encoded string
+console.log(string);//-> {"squirrel":false,"events":["weekend"]}
+
