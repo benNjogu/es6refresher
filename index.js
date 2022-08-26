@@ -1,6 +1,5 @@
-console.log("coconut".indexOf("u")); //-> 5
-
-console.log("one two three".indexOf("ee")); //-> 11
+console.log("        okay \n".trim());
 /**
- * In strings indexOf can search for a string containing more than one character.
+ * The trim method removes whitespace(spaces, newlines, tabs, and similar characters)
+ * from the start and the end of a string.
  */
