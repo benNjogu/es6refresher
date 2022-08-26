@@ -1,7 +1,6 @@
-let kim = "Kim";
-kim.age = 25;
-console.log(kim.age); //->undefined
+console.log("coconut".indexOf("u")); //-> 5
+
+console.log("one two three".indexOf("ee")); //-> 11
 /**
- * Values of type string, boolean and number are not objects.
- * They are immutable and can not be changed!
+ * In strings indexOf can search for a string containing more than one character.
  */
