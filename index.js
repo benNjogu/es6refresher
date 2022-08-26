@@ -1,5 +1,7 @@
-function remove(array, index) {
-  return array.slice(0, index).concat(array.slice(index + 1));
-}
-
-console.log(remove(["a", "b", "c", "d", "e"], 2)); //->[ "a", "b", "d", "e" ]
+let kim = "Kim";
+kim.age = 25;
+console.log(kim.age); //->undefined
+/**
+ * Values of type string, boolean and number are not objects.
+ * They are immutable and can not be changed!
+ */
