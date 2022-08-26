@@ -8,3 +8,7 @@ function max(...numbers) {
 }
 
 console.log(max(4, 1, 9, -2)); //-> 9
+
+let numbers = [5, 1, 7];
+console.log(max(...numbers)); //-> 7
+console.log(...numbers);//-> 5 1 7
