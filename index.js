@@ -1,4 +1,1 @@
-console.log(Math.random());
-/**
- * returns new pseudorandom number between 0 (inclusive) and 1 (exclusive), everytime you call it.
- */
+console.log(Math.round(Math.random())); //rounds off to the nearest number 0 or 1
