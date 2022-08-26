@@ -40,3 +40,22 @@ function phi(table) {
 }
 //The above as as per the formulae on page 66 Eloquent Javascript
 console.log(phi([76, 9, 4, 1])); //-> 0.06859943405700354
+
+function tableFor(event, journal) {
+  let table = [0, 0, 0, 0];
+  for (let i = 0; i < journal.length; i++) {
+    let entry = journal[i],
+      index = 0;
+    if (entry.events.includes(event)) index += 1;
+    if (entry.squirrel) index += 2;
+    table[index] += 1;
+  }
+
+  return table;
+}
+/**
+ * The includes method used above is used to check whether a given value exists in an array
+ */
+console.log(tableFor("pizza", journal));//-> [ 2, 1, 1, 0 ] different from the book since we never downloaded the JOURNAL file.
+
+
