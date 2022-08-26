@@ -19,3 +19,6 @@
 let string = JSON.stringify({ squirrel: false, events: ["weekend"] });//takes javascript value and returns a JSON-Encoded string
 console.log(string);//-> {"squirrel":false,"events":["weekend"]}
 
+console.log(JSON.parse(string).events);//-> [ "weekend" ]
+//JSON.parse() takes the string and returns it to the value it encodes
+
