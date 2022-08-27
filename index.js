@@ -1,30 +1,10 @@
-function range(start, end, step) {
-  let numbers = [];
-  if (start < end) {
-    for (let i = start; i <= end; ) {
-      numbers.push(i);
-      if (step == null) i++;
-      else i += step;
-    }
-  } else if (start > end) {
-    for (let i = start; i >= end; ) {
-      numbers.push(i);
-      if (step == null) i--;
-      else i += step;
-    }
+function reverseArray(array) {
+  let newArray = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    newArray.push(array[i]);
   }
 
-  return numbers;
+  return newArray;
 }
 
-function sum(ourArray) {
-  let count = 0;
-  for (let i = 0; i < ourArray.length; i++) {
-    count += ourArray[i];
-  }
-
-  return count;
-}
-
-console.log(range(5, 2, -2));//-> [ 5, 3 ]
-console.log(sum(range(5, 2, -2))); //-> 8 
+console.log(reverseArray([1, 2, 3, 4, 5]));//-> [ 5, 4, 3, 2, 1 ]
