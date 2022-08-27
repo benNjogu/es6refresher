@@ -1,9 +1,17 @@
 function range(start, end, step) {
   let numbers = [];
-  for (let i = start; i <= end; ) {
-    numbers.push(i);
-    if (step == null) i++;
-    else i += step;
+  if (start < end) {
+    for (let i = start; i <= end; ) {
+      numbers.push(i);
+      if (step == null) i++;
+      else i += step;
+    }
+  } else if (start > end) {
+    for (let i = start; i >= end; ) {
+      numbers.push(i);
+      if (step == null) i--;
+      else i += step;
+    }
   }
 
   return numbers;
@@ -18,4 +26,5 @@ function sum(ourArray) {
   return count;
 }
 
-console.log(sum(range(0, 10, 2))); //-> 30
+console.log(range(5, 2, -2));//-> [ 5, 3 ]
+console.log(sum(range(5, 2, -2))); //-> 8 
