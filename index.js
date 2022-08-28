@@ -73,17 +73,14 @@ let SCRIPTS = [
   },
 ];
 
-function filter(array, test) {
-  let passed = [];
+function map(array, transform) {
+  let mapped = [];
   for (let element of array) {
-    if (test(element)) {
-      passed.push(element);
-    }
+    mapped.push(transform(element));
   }
 
-  return passed;
+  return mapped;
 }
 
-console.log(filter(SCRIPTS, (script) => script.living));//returns all languages where living = true.
-
-console.log(SCRIPTS.filter((s) => s.direction == "ttb"));//returns maderine object.
+let rtlScripts = SCRIPTS.filter((s) => s.direction == "rtl");
+console.log(map(rtlScripts, (s) => s.name));//-> [ "Hebrew", "Arabic" ]
