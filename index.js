@@ -73,14 +73,13 @@ let SCRIPTS = [
   },
 ];
 
-function map(array, transform) {
-  let mapped = [];
+function reduce(array, combine, start) {
+  let current = start;
   for (let element of array) {
-    mapped.push(transform(element));
+    current = combine(current, element);
   }
 
-  return mapped;
+  return current;
 }
 
-let rtlScripts = SCRIPTS.filter((s) => s.direction == "rtl");
-console.log(map(rtlScripts, (s) => s.name));//-> [ "Hebrew", "Arabic" ]
+console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));//-> 10
