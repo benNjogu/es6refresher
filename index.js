@@ -1,12 +1,13 @@
-let list = {
-  value: 1,
-  rest: {
-    value: 2,
-    rest: {
-      value: 3,
-      rest: null,
-    },
-  },
-};
+//Program one:
+let count = 1;
+let total = 0;
+while (count <= 10) {
+  total += count;
+  count++;
+}
+console.log(total);
 
-console.log(list);
+//Program two:
+console.log(sum(range(1, 10)));
+
+//program two is most likely to be right!
