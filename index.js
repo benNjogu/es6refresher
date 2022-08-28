@@ -1,10 +1,12 @@
-function reverseArray(array) {
-  let newArray = [];
-  for (let i = array.length - 1; i >= 0; i--) {
-    newArray.push(array[i]);
-  }
+let list = {
+  value: 1,
+  rest: {
+    value: 2,
+    rest: {
+      value: 3,
+      rest: null,
+    },
+  },
+};
 
-  return newArray;
-}
-
-console.log(reverseArray([1, 2, 3, 4, 5]));//-> [ 5, 4, 3, 2, 1 ]
+console.log(list);
