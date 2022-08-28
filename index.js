@@ -76,3 +76,10 @@ let SCRIPTS = [
 // Two emoji characters, horse and shoe
 let horseShoe = "🐴👟";
 console.log(horseShoe.length);//-> 4
+console.log(horseShoe[0]);//-> � invalid half character code
+console.log(horseShoe.charCodeAt(0));//-> 55357 code of the half character
+console.log(horseShoe.codePointAt(0));//-> 128052 actual code for horse emoji
+/**
+ * The charCodeAt gives you a code unit, not a full character code.
+ * The codePointAt does not give a full unicode character.
+ */
