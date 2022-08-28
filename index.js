@@ -1,13 +1,7 @@
-//Program one:
-let count = 1;
-let total = 0;
-while (count <= 10) {
-  total += count;
-  count++;
+function repeat(n, action) {
+  for (let i = 0; i < n; i++) {
+    action(i);
+  }
 }
-console.log(total);
 
-//Program two:
-console.log(sum(range(1, 10)));
-
-//program two is most likely to be right!
+repeat(10, console.log);
