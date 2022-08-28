@@ -1,43 +1,76 @@
-/**
- * HIGHER ORDER FUNCTIONS
- * Functions that operate on other functions, either by taking them as arguments
- * or by returning them.
- */
-//eg1 functions that create other functions
-function greaterThan(n) {
-  return (m) => m > n;
-}
-let greaterThan10 = greaterThan(10);
-console.log(greaterThan10(11)); //-> true
+let SCRIPTS = [
+  {
+    name: "Coptic",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "ltr",
+    year: -200,
+    living: false,
+    link: "https://www.coptic_alphabet",
+  },
+  {
+    name: "Gakuyu",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "ltr",
+    year: -900,
+    living: true,
+    link: "https://www.gakuyu_alphabet",
+  },
+  {
+    name: "English",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "ltr",
+    year: -200,
+    living: true,
+    link: "https://www.english_alphabet",
+  },
+  {
+    name: "Hebrew",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "rtl",
+    year: -200,
+    living: true,
+    link: "https://www.aramaic_alphabet",
+  },
+  {
+    name: "Arabic",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "rtl",
+    year: -200,
+    living: true,
+    link: "https://www.arabic_alphabet",
+  },
+  {
+    name: "Mandarene",
+    ranges: [
+      [994, 1008],
+      [11392, 11508],
+      [11513, 11520],
+    ],
+    direction: "ttb",
+    year: -200,
+    living: true,
+    link: "https://www.mongolian_alphabet",
+  },
+];
 
-//eg2 functions that change other functions
-function noisy(f) {
-  return (...args) => {
-    console.log("calling with ", args);
-    let result = f(...args);
-    console.log("called with ", args, ", returned", result);
-    return result;
-  };
-}
 
-noisy(Math.min)(3, 2, 1); //-> calling with [ 3, 2, 1 ] //-> called with [ 3, 2, 1 ] , returned 1
-
-//eg3 we can write functions that provides new types of control flow
-function repeat(n, action) {
-  for (let i = 0; i < n; i++) {
-    action(i);
-  }
-}
-
-function unless(test, then) {
-  if (!test) then();
-}
-
-repeat(3, (n) => {
-  unless(n % 2 == 1, () => {
-    console.log(n, " is even");
-  });
-}); //-> 0  is even //-> 2  is even
-
-//eg4 the forEach loop
-["A", "B"].forEach((i) => console.log(i)); //-> A B
