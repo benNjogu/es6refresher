@@ -85,3 +85,5 @@ function filter(array, test) {
 }
 
 console.log(filter(SCRIPTS, (script) => script.living));//returns all languages where living = true.
+
+console.log(SCRIPTS.filter((s) => s.direction == "ttb"));//returns maderine object.
