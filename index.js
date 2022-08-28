@@ -83,3 +83,15 @@ console.log(horseShoe.codePointAt(0));//-> 128052 actual code for horse emoji
  * The charCodeAt gives you a code unit, not a full character code.
  * The codePointAt does not give a full unicode character.
  */
+
+let roseDragon = "🌹🐉";
+for (let char of roseDragon) {
+console.log(char);
+}
+// → 🌹
+// → 🐉
+
+/**
+ * The above for-of loop can be used to display the actual characters, not code units.
+ */
+
