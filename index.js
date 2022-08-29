@@ -22,3 +22,24 @@ function makeRabbit(type, cute) {
 }
 
 console.log(makeRabbit("whiteRabbit", false));
+
+/**
+ * The above can be simplified.
+ * If you put the keyword new infront of a function call, the function is treated as a constructor as
+ * shown below.
+ */
+function Rabbit(type) {
+  this.type = type;
+}
+
+Rabbit.prototype.speak = function (line) {
+  console.log(`The ${this.type} rabbit says '${line}'`);
+};
+
+let weirdRabbit = new Rabbit("weird");
+weirdRabbit.stupid = true;
+weirdRabbit.speak("am a weirdo");
+console.log(weirdRabbit);
+let cuteRabbit = new Rabbit('cute');
+console.log(cuteRabbit);
+cuteRabbit.speak('am small')
