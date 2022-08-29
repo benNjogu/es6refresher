@@ -42,4 +42,7 @@ weirdRabbit.speak("am a weirdo");
 console.log(weirdRabbit);
 let cuteRabbit = new Rabbit('cute');
 console.log(cuteRabbit);
-cuteRabbit.speak('am small')
+cuteRabbit.speak("am small");
+
+console.log(Object.getPrototypeOf(Rabbit) == Function.prototype);//-> true
+console.log(Object.getPrototypeOf(weirdRabbit) == Rabbit.prototype);//-> true
