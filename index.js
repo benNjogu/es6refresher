@@ -25,3 +25,12 @@ speak.call(hungryRabbit, "am full");
  * With the function call method above, the this value is taken as the first argument and treats further 
  * arguments as normal parameters.
  */
+
+function normalize() {
+  console.log(this.coords.map((n) => n / this.length));
+}
+
+normalize.call({ coords: [0, 2, 3], length: 5 });//-> [ 0, 0.4, 0.6 ]
+/**
+ * Arrow functions do not bind their own this, but can see the this binding of the scope around them.
+ */
