@@ -1,53 +1,22 @@
-let protoRabbit = {
+class Rabbit {
+  constructor(type) {
+    this.type = type;
+  }
+
   speak(line) {
     console.log(`The ${this.type} rabbit says '${line}'`);
-  },
-  cute: true,
-};
-
-let killerRabbit = Object.create(protoRabbit);
-killerRabbit.type = "killer";
-killerRabbit.speak("SKREEEE!"); //-> The killer rabbit says 'SKREEEE!'
-console.log(killerRabbit.cute); //-> true
-
-/**
- * As demonstrated above, you can use Object.create to create an Object with a specific prototype.
- */
-
-function makeRabbit(type, cute) {
-  let rabbit = Object.create(protoRabbit);
-  rabbit.type = type;
-  rabbit.cute = cute;
-  return rabbit;
+  }
 }
 
-console.log(makeRabbit("whiteRabbit", false));
+let killerRabbit = new Rabbit("killer");
+killerRabbit.speak("I will kill");
+
+let blackRabbit = new Rabbit("black");
+blackRabbit.speak("I love whites");
 
 /**
- * The above can be simplified.
- * If you put the keyword new infront of a function call, the function is treated as a constructor as
- * shown below.
- */
-function Rabbit(type) {
-  this.type = type;
-}
-
-Rabbit.prototype.speak = function (line) {
-  console.log(`The ${this.type} rabbit says '${line}'`);
-};
-
-let weirdRabbit = new Rabbit("weird");
-weirdRabbit.stupid = true;
-weirdRabbit.speak("am a weirdo");
-console.log(weirdRabbit);
-let cuteRabbit = new Rabbit('cute');
-console.log(cuteRabbit);
-cuteRabbit.speak("am small");
-
-console.log(Object.getPrototypeOf(Rabbit) == Function.prototype);//-> true
-console.log(Object.getPrototypeOf(weirdRabbit) == Rabbit.prototype);//-> true
-
-console.log(Object.getPrototypeOf(Rabbit) == Object.prototype);//-> false
-/**
- * As shown above, the actual prototype of a constructor is Function.prototype since constructors are functions
+ * The above provides the actual constructor function, which will be bound to the name Rabbit.
+ * The others are packaged into that constructors prototype.
+ * Class declarations only allow methods to be added to the prototype. This is inconvinient when you want to
+ * save a non-function value in there.
  */
