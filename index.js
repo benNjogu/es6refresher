@@ -1,14 +1,15 @@
-let empty = {};
-console.log(empty.toString); //-> function toString()
-console.log(empty.toString()); //-> [object Object]
+let protoRabbit = {
+  speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+  },
+  cute: true,
+};
 
-console.log(Object.getPrototypeOf({}) == Object.prototype); //-> true
-console.log(Object.getPrototypeOf(Object.prototype)); //-> null
+let killerRabbit = Object.create(protoRabbit);
+killerRabbit.type = "killer";
+killerRabbit.speak("SKREEEE!"); //-> The killer rabbit says 'SKREEEE!'
+console.log(killerRabbit.cute); //-> true
 
 /**
- * Many objects don't directly have object.prototype as their prototype but instead have another
- * object that provides a different set of default properties.
+ * As demonstrated above, you can use Object.create to create an Object with a specific prototype.
  */
-//e.g.
-console.log(Object.getPrototypeOf(Math.max) == Function.prototype);//-> true
-console.log(Object.getPrototypeOf([]) == Array.prototype);//-> true
