@@ -46,3 +46,8 @@ cuteRabbit.speak("am small");
 
 console.log(Object.getPrototypeOf(Rabbit) == Function.prototype);//-> true
 console.log(Object.getPrototypeOf(weirdRabbit) == Rabbit.prototype);//-> true
+
+console.log(Object.getPrototypeOf(Rabbit) == Object.prototype);//-> false
+/**
+ * As shown above, the actual prototype of a constructor is Function.prototype since constructors are functions
+ */
