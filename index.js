@@ -1,11 +1,16 @@
-/**
- * A map is a datastructure that is used to map values(keys) to other values.
- */
+class Rabbit {
+  constructor(type) {
+    this.type = type;
+  }
 
-let ages = new Map();
-ages.set("Liang", 39);
-ages.set("Boris", 22);
-ages.set("Mannaseh", 62);
+  speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+  }
+}
 
-console.log(`Liang is ${ages.get("Liang")}`); //-> Liang is 39
-console.log(ages.has("toString")); //-> false
+Rabbit.prototype.toString = function () {
+  return `a ${this.type} rabbit`;
+};
+
+let blackRabbit = new Rabbit("black");
+console.log(String(blackRabbit)); //-> a black rabbit
