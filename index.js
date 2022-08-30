@@ -32,6 +32,16 @@ Array.prototype[toStringSymbol] = function(){
 console.log([1, 2].toString());//-> 1,2
 console.log([1, 2][toStringSymbol]());//-> 2 cm of blue yarn
 
+/**
+ * It is possible to include symbol properties in object expressions and classes by using 
+ * square blackets around the property name.
+ */
+//e.g
+let stringObject = {
+  [toStringSymbol](){return "a jute rope";}
+};
+console.log(stringObject[toStringSymbol]());//-> a jute rope
+
 
 
 
