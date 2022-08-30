@@ -1,28 +1,11 @@
-class Rabbit {
-  constructor(type) {
-    this.type = type;
-  }
-
-  speak(line) {
-    console.log(`The ${this.type} rabbit says '${line}'`);
-  }
-}
-
-Rabbit.prototype.teeth = "small";
-let killerRabbit = new Rabbit("killer");
-console.log(killerRabbit.teeth); //-> small
-killerRabbit.teeth = "long, sharp, and bloody";
-console.log(killerRabbit.teeth); //-> long, sharp, and bloody
-let blackRabbit = new Rabbit("black");
-console.log(blackRabbit.teeth); //-> small
-console.log(Rabbit.prototype.teeth); //-> small
-
 /**
- * When you add a property to an object, whether it is present in the prototype or not,
- * the property is added to the object itself.
+ * A map is a datastructure that is used to map values(keys) to other values.
  */
 
-console.log(Array.prototype.toString == Object.prototype.toString); //-> false
-console.log([1, 2].toString());//1, 2
+let ages = new Map();
+ages.set("Liang", 39);
+ages.set("Boris", 22);
+ages.set("Mannaseh", 62);
 
-console.log(Object.prototype.toString.call([1, 2]));//-> [object Array]
+console.log(`Liang is ${ages.get("Liang")}`); //-> Liang is 39
+console.log(ages.has("toString")); //-> false
