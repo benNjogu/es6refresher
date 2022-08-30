@@ -21,3 +21,6 @@ console.log(Rabbit.prototype.teeth); //-> small
  * When you add a property to an object, whether it is present in the prototype or not,
  * the property is added to the object itself.
  */
+
+console.log(Array.prototype.toString == Object.prototype.toString); //-> false
+console.log([1, 2].toString());//1, 2
