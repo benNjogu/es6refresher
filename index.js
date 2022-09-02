@@ -1,23 +1,25 @@
-function promptNumber(question) {
-  let result = Number(prompt(question));
-  if (Number.isNaN(result)) return null;
-  else return result;
+/**
+ * Exceptions - mechanism that makes it possible for code that runs into a problem
+ * to raise(or throw) an exception.
+ * An exception can be any value.
+ */
+function promptDirection(question) {
+  let result = prompt(question);
+  if (result.toLowerCase() == "left") return "L";
+  if (result.toLowerCase() == "right") return "R";
+  throw new Error("Invalid direction: " + result);
 }
 
-//console.log(promptNumber("What did you score in your favourite unit?")); //-> 77
-
-function lastElement(array){
-  if(array.length == 0){
-    return {failed: true};
-  }else{
-    return {element: array[array.length - 1]}
+function look() {
+  if (promptDirection("which way?") == "L") {
+    return "a house";
+  } else {
+    return "two angry bears";
   }
 }
 
-console.log(lastElement([]));//-> { failed: true }
-console.log(lastElement([1, 2, 3, 4]));//-> { element: 4 }
-
-/**
- * If the function can already return any kind of value, you'll have to do something like wrap
- * the result in an object to be able to distinguish success from failure.
- */
+try {
+  console.log("You see " + look()); //-> You see two angry bears
+} catch (error) {
+  console.log("Something went wrong: " + error); //-> Something went wrong: Error: Invalid direction: r
+}
