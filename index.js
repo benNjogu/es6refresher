@@ -8,10 +8,12 @@ function numberToString(n, base = 10) {
 
   do {
     result = String(n % base) + result;
-    n /= base;
+    n = Math.floor(n / base);
   } while (n > 0);
 
   return sign + result;
 }
 
-console.log(numberToString(13, 10));
+console.log(numberToString(13, 10));//-> 13
+let ourString = numberToString(13, 10) + 2;
+console.log(ourString + " is a string");//-> 132 is a string
