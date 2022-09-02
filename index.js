@@ -1,19 +1,7 @@
-function numberToString(n, base = 10) {
-  let result = "",
-    sign = "";
-  if (n < 0) {
-    sign = "-";
-    n = -n;
-  }
-
-  do {
-    result = String(n % base) + result;
-    n = Math.floor(n / base);
-  } while (n > 0);
-
-  return sign + result;
+function promptNumber(question) {
+  let result = Number(prompt(question));
+  if (Number.isNaN(result)) return null;
+  else return result;
 }
 
-console.log(numberToString(13, 10));//-> 13
-let ourString = numberToString(13, 10) + 2;
-console.log(ourString + " is a string");//-> 132 is a string
+console.log(promptNumber("What did you score in your favourite unit?")); //-> 77
