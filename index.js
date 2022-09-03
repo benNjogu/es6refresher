@@ -1,53 +1,17 @@
-let accounts = {
-  a: 100,
-  b: 0,
-  c: 20,
-};
-
-function getAccount() {
-  let accountName = prompt("Enter account name");
-  if (!accounts.hasOwnProperty(accountName)) {
-    throw new Error(`No such account: ${accountName}`);
-  }
-
-  return accountName;
+function promptDirection(question) {
+  let result = prompt(question);
+  if (result.toLowerCase() == "left") return "L";
+  if (result.toLowerCase() == "right") return "R";
+  throw new Error("Invalid direction: " + result);
 }
 
-/*function transfer(from, amount) {
-  if (accounts[from] < amount) return;
-  accounts[from] -= amount;
-  accounts[getAccount()] += amount;
-}
-
-transfer("a", 63);
-console.log(accounts); //-> { a: 37, b: 63, c: 20 }*/
-
-/*
-The above transfer function transfers a sum of money from a given account to
-another, asking for the name of the other account in the process. If given an
-invalid account name, getAccount throws an exception.
-But transfer first removes the money from the account and then calls
-getAccount before it adds it to another account. If it is broken off by an
-exception at that point, it’ll just make the money disappear.
-That code could have been written a little more intelligently, for example by
-calling getAccount before it starts moving money around. 
-*/
-
-
-function transfer(from, amount) {
-  if (accounts[from] < amount) return;
-  let progress = 0;
+for (;;) {
+  //This kind of loop creates a loop that does not terminate on it's own.
   try {
-    accounts[from] -= amount;
-    progress = 1;
-    accounts[getAccount()] += amount;
-    progress = 2;
-  } finally {
-    if (progress == 1) {
-      accounts[from] += amount;
-    }
+    let dir = promptDirection("Where");//mispelling promptDirection may cause a big problem!
+    console.log("You chose ", dir);
+    break;
+  } catch (e) {
+    console.log("Not a valid direction. Try again.");
   }
 }
-
-transfer("a", 63);
-console.log(accounts);
