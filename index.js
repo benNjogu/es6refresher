@@ -13,14 +13,14 @@ function getAccount() {
   return accountName;
 }
 
-function transfer(from, amount) {
+/*function transfer(from, amount) {
   if (accounts[from] < amount) return;
   accounts[from] -= amount;
   accounts[getAccount()] += amount;
 }
 
 transfer("a", 63);
-console.log(accounts); //-> { a: 37, b: 63, c: 20 }
+console.log(accounts); //-> { a: 37, b: 63, c: 20 }*/
 
 /*
 The above transfer function transfers a sum of money from a given account to
@@ -32,3 +32,22 @@ exception at that point, it’ll just make the money disappear.
 That code could have been written a little more intelligently, for example by
 calling getAccount before it starts moving money around. 
 */
+
+
+function transfer(from, amount) {
+  if (accounts[from] < amount) return;
+  let progress = 0;
+  try {
+    accounts[from] -= amount;
+    progress = 1;
+    accounts[getAccount()] += amount;
+    progress = 2;
+  } finally {
+    if (progress == 1) {
+      accounts[from] += amount;
+    }
+  }
+}
+
+transfer("a", 63);
+console.log(accounts);
