@@ -6,3 +6,8 @@
 
 let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
 console.log(dateTime.test("1-30-2003 8:45"));//-> true
+
+/**
+ * You can also specify open-ended ranges when using braces by omitting the number after the comma
+ * e.g. {5,} means five or more times.
+ */
