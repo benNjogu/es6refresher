@@ -1,16 +1,8 @@
 /**
- * A number of common character groups have their own built-in shortcuts.
- *  \d - any digit character
- *  \w - word character
- *  \s - whitespace character(space, tab, newline)
- *  \D - not a digit
- *  \W - a nonalphanumeric character
- *  \S - a non whitespace character
- *  . - any character except for new line 
+ * To invert a set of characters- to express that you want to match any character except the ones in the set-
+ * you can write a caret(^) character after the opening.
  */
+let notBinary = /[^01]/;
+console.log(notBinary.test("1100100010100110")); //-> false
 
-//Example:
-let dateTime = /\d\d-\d\d-\d\d\d\d\ \d\d:\d\d/;
-console.log(dateTime.test("01-30-2003 15:20"));//-> true
-
-console.log(dateTime.test("30-jan-2003 15:30"))//-> false
+console.log(notBinary.test("1100100010200110")); //-> true
