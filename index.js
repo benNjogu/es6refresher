@@ -1,19 +1,8 @@
 /**
- * When you put a (+) sign after something in regular expression, it indicates that the element may be repeated
- * more than once.
+ * To indicate that a pattern should occur a precise number of times, use braces.
+ * e.g. {4} indicates that an element should occur four times.
+ *      {2, 4} means an element must occur at least two times at most four times.
  */
-console.log(/'\d+'/.test("'123'"));//-> true
-console.log(/'\d+'/.test("''"));//-> false
 
-/**
- * The (*) has a similar meaning but also allows the pattern to match zero times.
- */
-console.log(/'\d*'/.test("'123'"));//-> true
-console.log(/'\d*'/.test("''"));//-> true
-
-/**
- * A question mark makes a part of a pattern optional, meaning it may occur zero times or one time.
- */
-let neighbour = /neighbou?r/;
-console.log(neighbour.test("neighbour"));//-> true
-console.log(neighbour.test("neighbor"));//-> true
+let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
+console.log(dateTime.test("1-30-2003 8:45"));//-> true
