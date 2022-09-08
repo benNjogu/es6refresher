@@ -1,11 +1,16 @@
 /**
- * Putting a set of characters between square brackets makes that part of the expression match any of the
- * characters in the brackets.
+ * A number of common character groups have their own built-in shortcuts.
+ *  \d - any digit character
+ *  \w - word character
+ *  \s - whitespace character(space, tab, newline)
+ *  \D - not a digit
+ *  \W - a nonalphanumeric character
+ *  \S - a non whitespace character
+ *  . - any character except for new line 
  */
-console.log(/[0123456789]/.test("in 1992")); //-> true
 
-/**
- * Within square brackets, a hyphen between two characters can be used to indicate a range of characters,
- * where the ordering is determined by the character's unicode number.
- */
-console.log(/[0-9]/.test("in 1992")); //-> true
+//Example:
+let dateTime = /\d\d-\d\d-\d\d\d\d\ \d\d:\d\d/;
+console.log(dateTime.test("01-30-2003 15:20"));//-> true
+
+console.log(dateTime.test("30-jan-2003 15:30"))//-> false
