@@ -1,8 +1,6 @@
-const x = 1;
-function evalAndReturnX(code) {
-  eval(code); //executes a string in the current scope
-  return x;
-}
-
-console.log(evalAndReturnX("var x = 2")); //-> 2
-console.log(x); //-> 1
+let plusOne = Function("n, m", "return n+m+1");
+console.log(plusOne(4, 5));//-> 10
+/**
+ * When you use the Function constructor, it takes two arguments; a string containing a comma-separated list of
+ * argument names and a string containing the function body.
+ */
