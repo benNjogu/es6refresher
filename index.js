@@ -1,7 +1,11 @@
-console.log("papa".replace("p", "m")); //-> mapa
-
+console.log(
+  "Liskov, Barbara\nMacCarthy, John\nWalder, Philip".replace(
+    /(\w+), (\w+)/g,
+    "$2 $1"
+  )
+);
 /**
- * Using regular expressions all matches in the string can be replaced,
- * using a g option(for global).
+Barbara Liskov
+John MacCarthy
+Philip Walder
  */
-console.log("papa".replace(/[p]/g, "m")); //-> mama
