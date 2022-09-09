@@ -1,7 +1,4 @@
-console.log(/cat/.test("concatenate")); //-> true
+let animalCount = /\b\d+ (pig|cow|chicken)s?\b/;
+console.log(animalCount.test("15 pigs")); //-> true
 
-/**
- * A word boundary(\b) can be the start or end of a string or any point in the string that has a word character
- * as in (\w) on one side and a non word character on the other.
- */
-console.log(/\bcat\b/.test("concatenate")); //-> false
+console.log(animalCount.test("15 pigschickens")); //-> false
