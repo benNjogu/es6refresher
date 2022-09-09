@@ -1,20 +1,19 @@
-/**
- * It is possible to pass to pass a function rather than a string as the second argument to replace.
- */
-
-let s = "the cia and the fbi";
-console.log(s.replace(/\b(fbi|cia)\b/g, (str) => str.toUpperCase())); //-> the CIA and the FBI
-
-let stock = "1 lemon, 2 cabbages, and 101 eggs";
-function minusOne(match, amount, unit) {
-  amount = Number(amount) - 1;
-  if (amount == 1) {
-    //only one left, remove the 's'
-    unit = unit.slice(0, unit.length - 1);
-  } else if (amount == 0) {
-    amount = "no";
-  }
-  return amount + " " + unit;
+function stripComments(code) {
+  return code.replace(/\/\/.*|\/\*[^]*\*\//g, "");
 }
 
-console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
+console.log(stripComments("1 + /*2*/3")); //-> 1 + 3
+console.log(stripComments("x = 10;// ten!"));// → x = 10;
+
+/**
+ *The below code is giving a wrong output due to the greedy nature of the repetition operators(+, *, ?, {}) 
+ */
+console.log(stripComments("1 /* a */+/* b */ 1"));// → 1 1
+
+/**
+ * The part b4 the or operator, matches 2 slashes character followed by any number of non newline characters.
+ * The part for multiline comments use[^](any character that is not on the empty set of characters) as a way to
+ * match any character.
+ * We cannot just use a period because block comments can continue on a new line, and the period character does 
+ * not match newline characters.
+ */
