@@ -1,6 +1,6 @@
-let plusOne = Function("n, m", "return n+m+1");
-console.log(plusOne(4, 5));//-> 10
 /**
- * When you use the Function constructor, it takes two arguments; a string containing a comma-separated list of
- * argument names and a string containing the function body.
+ * One approach to asynchronous programming is to make functions that perform a slow action take an extra argument
+ * i.e a callback function. The action is started, and when it finishes, the callback function is called with the
+ * result.
  */
+setTimeout(() => console.log("Tick"), 10000);
