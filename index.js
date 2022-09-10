@@ -1,6 +1,8 @@
 /**
- * One approach to asynchronous programming is to make functions that perform a slow action take an extra argument
- * i.e a callback function. The action is started, and when it finishes, the callback function is called with the
- * result.
+ * A promise is an asynchronous action that may complete at some point and produce a value.
+ * It is able to notify anyone who is interested when its value is available.
+ * The easiest way to create a promise is by calling;- Promise.resolve
  */
-setTimeout(() => console.log("Tick"), 10000);
+let fifteen = Promise.resolve(15);
+fifteen.then(value => console.log(`Got ${value}`))//-> Got 15
+
