@@ -1,2 +1,9 @@
-let name = document.getElementById("myName");
-console.log(name.src); //-> http://127.0.0.1:5500/img/ben.png
+let paragraphs = document.body.getElementsByTagName("p");
+document.body.insertBefore(paragraphs[2], paragraphs[0]);
+/**
+Third
+
+First
+
+Second
+ */
