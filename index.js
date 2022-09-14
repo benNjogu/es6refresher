@@ -1,5 +1,7 @@
-document.body.addEventListener("click", (event) => {
-  if (event.target.nodeName == "BUTTON") {
-    console.log("Clicked", event.target.textContent);
-  }
+let link = document.querySelector("a");
+let button = document.querySelector("button");
+
+link.addEventListener("click", (event) => {
+  console.log("Nope");
+  event.preventDefault();
 });
