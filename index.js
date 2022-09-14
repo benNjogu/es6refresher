@@ -1,10 +1,9 @@
+let para = document.querySelector("p");
 let button = document.querySelector("button");
+para.addEventListener("mousedown", () => {
+  console.log("Handler for paragraph.");
+});
 button.addEventListener("mousedown", (event) => {
-  if (event.button == 0) {
-    console.log("Left button");
-  } else if (event.button == 1) {
-    console.log("Middle button");
-  } else if (event.button == 2) {
-    console.log("Right button");
-  }
+  console.log("Handler for button.");
+  if (event.button == 2) event.stopPropagation();
 });
