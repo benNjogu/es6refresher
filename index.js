@@ -1,9 +1,10 @@
 let button = document.querySelector("button");
-function once() {
-  console.log("Done.");
-  button.removeEventListener("click", once);
-}
-button.addEventListener("click", once);
-/**
- * Remove event listener from a node after one click.
- */
+button.addEventListener("mousedown", (event) => {
+  if (event.button == 0) {
+    console.log("Left button");
+  } else if (event.button == 1) {
+    console.log("Middle button");
+  } else if (event.button == 2) {
+    console.log("Right button");
+  }
+});
