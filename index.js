@@ -1,9 +1,5 @@
-let para = document.querySelector("p");
-let button = document.querySelector("button");
-para.addEventListener("mousedown", () => {
-  console.log("Handler for paragraph.");
-});
-button.addEventListener("mousedown", (event) => {
-  console.log("Handler for button.");
-  if (event.button == 2) event.stopPropagation();
+document.body.addEventListener("click", (event) => {
+  if (event.target.nodeName == "BUTTON") {
+    console.log("Clicked", event.target.textContent);
+  }
 });
