@@ -1,9 +1,4 @@
-let paras = document.body.getElementsByTagName("p");
-for (let para of Array.from(paras)) {
-  if (para.getAttribute("data-classified") == "secret") {
-    para.remove();
-  }
-}
-/**
- * I have two feet.
- */
+let para = document.body.getElementsByTagName("p")[0];
+console.log("clientHeight:", para.clientHeight); //-> clientHeight: 18
+console.log("offsetHeight:", para.offsetHeight); //-> offsetHeight: 24
+console.log(getBoundingClientRect(para));
