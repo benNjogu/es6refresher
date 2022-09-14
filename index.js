@@ -1,4 +1,9 @@
 let button = document.querySelector("button");
-button.addEventListener("click", () => {
-  console.log("Button clicked.");
-});
+function once() {
+  console.log("Done.");
+  button.removeEventListener("click", once);
+}
+button.addEventListener("click", once);
+/**
+ * Remove event listener from a node after one click.
+ */
