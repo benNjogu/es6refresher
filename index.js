@@ -1,7 +1,14 @@
-let link = document.querySelector("a");
-let button = document.querySelector("button");
+window.addEventListener("keydown", (event) => {
+  if (event.key == "v") {
+    document.body.style.background = "violet";
+  }
+});
+window.addEventListener("keyup", (event) => {
+  if (event.key == "v") {
+    document.body.style.background = "";
+  }
+});
 
-link.addEventListener("click", (event) => {
-  console.log("Nope");
-  event.preventDefault();
+window.addEventListener("keydown", (event) => {
+  if (event.key == " " && event.ctrlKey) console.log("Continuing!");
 });
