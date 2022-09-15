@@ -1,11 +1,19 @@
-let help = document.querySelector("#help");
-let fields = document.querySelectorAll("input");
-for (let field of Array.from(fields)) {
-  field.addEventListener("focus", (event) => {
-    let text = event.target.getAttribute("data-help");
-    help.textContent = text;
-  });
-  field.addEventListener("blur", (event) => {
-    help.textContent = "";
-  });
+//Setting timeout
+let bombTimer = setTimeout(() => {
+  console.log("BOOM");
+}, 500);
+
+//Clearing timeout
+if (Math.random() < 0.5) {
+  console.log("Defused.");
+  clearTimeout(bombTimer);
 }
+
+let ticks = 0;
+let clock = setInterval(() => {
+  console.log("tick", ticks++);
+  if (ticks == 10) {
+    clearInterval(clock);
+    console.log("stop.");
+  }
+}, 200);
