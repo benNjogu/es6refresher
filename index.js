@@ -1,10 +1,11 @@
-//create some content
-document.body.appendChild(
-  document.createTextNode("supercalifragilisticexpialidocious ".repeat(1000))
-);
-
-let bar = document.querySelector("#progress");
-window.addEventListener("scroll", () => {
-  let max = document.body.scrollHeight - innerHeight;
-  bar.style.width = `${(pageYOffset / max) * 100}%`;
-});
+let help = document.querySelector("#help");
+let fields = document.querySelectorAll("input");
+for (let field of Array.from(fields)) {
+  field.addEventListener("focus", (event) => {
+    let text = event.target.getAttribute("data-help");
+    help.textContent = text;
+  });
+  field.addEventListener("blur", (event) => {
+    help.textContent = "";
+  });
+}
