@@ -1,4 +1,4 @@
-import Teacher from "./teacher";
+import Teacher, { promote } from "./teacher";
 
 let t = new Teacher("Ben", "BSc.");
 console.log(t.name); //-> Ben
